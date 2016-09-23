@@ -58,7 +58,8 @@ function skinDay() {
     <input id="invCode" name="invCode" type="hidden" value="ST2354701" />
     <input id="invSkinCode" name="invSkinCode" type="hidden" value="WD004" />
     
-    <input id="invTitle" name="invTitle" type="hidden" value="[지훈과 민혜의 결혼식에 초대합니다.]\n\n일시 : 2016년 10월 29일 14:00\n장소 : 한국의 집 (서울시 중구 퇴계로, 충무로역)\n\n" />
+    <input id="invTitle2" name="invTitle2" type="hidden" value="지훈과 민혜의 결혼식에 초대합니다." />
+    <input id="invTitle" name="invTitle" type="hidden" value="지훈과 민혜의 결혼식에 초대합니다. \n \n 일시 : 2016년 10월 29일 14:00 \n 장소 : 한국의 집 (서울시 중구 퇴계로, 충무로역) \n \n " />
     <input id="invMainImage" name="invMainImage" type="hidden" value="/Photos/201609/ST2354701/mainimage.JPG" />
     <input id="commentYN" name="commentYN" type="hidden" value="N" />
     <input id="evtDate" name="evtDate" type="hidden" value="2016-10-29 Sat" />
@@ -789,7 +790,7 @@ function skinDay() {
         function shareStory() {
             Kakao.Story.open({
                 url: 'https://we-are-getting-married.github.io/',
-                text: '모바일 초대장'
+                text: $("#invTitle").val()
             });
         }
     </script>
