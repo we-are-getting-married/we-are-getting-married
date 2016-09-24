@@ -118,23 +118,6 @@ function skinDay() {
             $(".input_floor").html($("#locDetail").val());
             $(".input_greeting").html($("#invGreeting").val());
 
-            if($("#evtDate").length>0 && $("#evtDate").val() !=""){
-                //var dateText = $(".want_day").html().replace(/[sunmotewdhfriat()가-힣]/gi, '').trim();
-                var dateText = $(".want_day").html().replace(/[^0-9.\-]/gi, '').trim();
-                var today = new Date(getToday()); // 오늘 날짜
-                var dday = new Date(dateText); // 디데이를 설정할 날짜
-                var cal = today.getTime() - dday.getTime();
-                var days = Math.ceil(cal / (1000 * 60 * 60 * 24));
-
-                // D-day
-                if (days > 0) {
-                    $(".input_dday").html("D" + "+" + days);
-                } else if (days < 0) {
-                    $(".input_dday").html("D" + days);
-                } else {
-                    $(".input_dday").html("Today");
-                }
-            }
             // 메인이미지
             // 청첩장정보
             if ($(".input_husband").length>0) $(".input_husband").html($("#grmName").val());
