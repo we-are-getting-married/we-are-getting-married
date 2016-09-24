@@ -274,35 +274,6 @@ function skinDay() {
             });
 
 
-            // 나머지
-            $("ul.sns_a>li>a").click(function () {
-                var ix = $(this).parent().index();
-                var txt = $("#invTitle").val();
-                var url = 'https://we-are-getting-married.github.io/';
-
-                if (ix == 0) {
-                    // facebook
-                    sendSns("facebook", url, txt);
-                    return false;
-                }
-                else if (ix == 1) {
-                    // twitter
-                    sendSns("twitter", url, txt);
-                    return false;
-                }
-            });
-
-            $(".galMore").on("click", function(){
-                $("li.overCount").removeClass("overCount");
-                if($('#skin_frame', window.parent.document).length>0){
-                    setTimeout(function () {
-                        var frameHeight = $(".skin_wrap").height();
-                        $('#skin_frame', window.parent.document).css({ height: frameHeight });
-                    }, 210);
-                }
-                $(this).hide();
-                return false;
-            });
         });
     </script>
 </body>
