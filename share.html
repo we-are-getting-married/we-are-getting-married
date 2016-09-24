@@ -40,7 +40,7 @@
 
     <script type="text/javascript" src="/public/js/ui/photoswipe.js"></script>
     <script type="text/javascript" src="/public/js/ui/photoswipe-ui-default.min.js"></script>
-    <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="/public/js/sns.js"></script>
     
 <script>
@@ -229,31 +229,6 @@ function skinDay() {
             $(".icon_tel > a").attr("href", "tel:" + $("#locTel").val())
 
             $(".bi_ST").show();
-
-            //event
-            // 내비게이션 (0:네이버/1:카카오)
-            $("ul.navi>li>a").click(function () {
-                var ix = $(this).parent().index();
-                var lat = $("#locMapLat").val();
-                var lng = $("#locMapLng").val();
-                var loc = $("#locName").val();
-                var navurl = "";
-
-                if (ix == 0) {
-                    // naver navi
-                    navurl = "http://app.map.naver.com/launchApp/?version=11&menu=navigation&elat=" + lat + "&elng=" + lng + "&etitle=" + encodeURIComponent(loc);
-                }
-                else if (ix == 1) {
-                    // kakao navi
-                    navurl = "http://kakaonavi-wguide.kakao.com/drive.html?ak=8c7ac8fdd6138eab66a85f46aec3a618&ctype=1&lt=" + lat + "&ln=" + lng + "&dt=" + encodeURIComponent(loc);
-                }
-                else if (ix == 1) {
-
-                }
-                var f = window.open(navurl);
-
-                return false;
-            });
 
             // 교통정보 (0:네이버자동차길찾기/1:네이버대중교통길찾기/2:네이버대중교통길찾기)
             $("ul.traffic_info>li>a").click(function () {
