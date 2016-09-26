@@ -752,7 +752,8 @@ function skinDay() {
                 },
                 webButton: {
                     text: '모바일 초대장 연결',
-                    url: 'https://we-are-getting-married.github.io/'
+                    // url: 'https://we-are-getting-married.github.io/'
+                    url: document.location.href
                 }
             });
 
@@ -761,7 +762,8 @@ function skinDay() {
             $("ul.sns_a>li>a").click(function () {
                 var ix = $(this).parent().index();
                 var txt = $("#invTitle").val();
-                var url = 'https://we-are-getting-married.github.io/';
+                // var url = 'https://we-are-getting-married.github.io/';
+                var url = document.location.href;
 
                 if (ix == 0) {
                     // facebook
@@ -790,15 +792,16 @@ function skinDay() {
 
         function shareStory() {
             Kakao.Story.open({
-                url: 'https://we-are-getting-married.github.io/',
+                // url: 'https://we-are-getting-married.github.io/',
+                url: document.location.href,
                 text: $("#invTitle").val()
             });
         }
         var touch = 0;
-        // hideLocation();
+        hideLocation();
         function hideLocation() {
             if (document.location.href.indexOf('#') > -1) {
-                if (touch > 5) {
+                if (touch > 15) {
                     $('.hide-me').css('display', 'block');
                 } else {
                     $('.hide-me').css('display', 'none');
@@ -807,7 +810,7 @@ function skinDay() {
         }
         function touchMainImage() {
             touch++;
-            // hideLocation();
+            hideLocation();
         }
     </script>
 <script>
