@@ -742,9 +742,14 @@ function skinDay() {
             // 카카오
             Kakao.init('0af029642d586b9eb389dd79b1932131');
             // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+            var katalkLabel = "[지훈과 민혜의 결혼식에 초대합니다.]\n\n일시 : 2016년 10월 29일 14:00\n장소 : 한국의 집 (서울시 중구 퇴계로, 충무로역)\n\n" + 'https://we-are-getting-married.github.io/';
+            if (document.location.href.indexOf('#') > -1) {
+                katalkLabel = "[지훈과 민혜의 결혼식에 초대합니다.]\n\n일시 : 2016년 10월 29일 14:00\n\n" + 'https://we-are-getting-married.github.io/' + document.location.hash + "\n\n ";
+            }
+
             Kakao.Link.createTalkLinkButton({
                 container: '#kakao-link-btn',
-                label: "[지훈과 민혜의 결혼식에 초대합니다.]\n\n일시 : 2016년 10월 29일 14:00\n장소 : 한국의 집 (서울시 중구 퇴계로, 충무로역)\n\n" + 'https://we-are-getting-married.github.io/' + document.location.hash + "\n\n ",
+                label: katalkLabel,
                 image: {
                     src: 'https://we-are-getting-married.github.io/Photos/201609/ST2354701/68e6dd5f-2547-4e6a-909c-b18c155c9813.JPG',
                     width: '800',
@@ -803,6 +808,7 @@ function skinDay() {
             if (document.location.href.indexOf('#') > -1) {
                 if (touch > 10) {
                     $('.hide-me').css('display', 'block');
+					document.location.href = document.location.origin;
                 } else {
                     $('.hide-me').css('display', 'none');
                 }
